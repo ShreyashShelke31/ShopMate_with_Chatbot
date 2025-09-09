@@ -1,0 +1,266 @@
+[
+  {
+    "role": "user",
+    "message": "hiii",
+    "session": "default",
+    "ts": 1757319302
+  },
+  {
+    "role": "bot",
+    "message": "Demo reply: set GEMINI_API_KEY and GEMINI_URL in backend/.env to enable live chatbot.",
+    "session": "default",
+    "ts": 1757319302
+  },
+  {
+    "role": "user",
+    "message": "hiii",
+    "session": "default",
+    "ts": 1757319947
+  },
+  {
+    "role": "bot",
+    "message": "Demo reply: set GEMINI_API_KEY and GEMINI_URL in backend/.env to enable live chatbot.",
+    "session": "default",
+    "ts": 1757319947
+  },
+  {
+    "role": "user",
+    "message": "heljefl",
+    "session": "default",
+    "ts": 1757320073
+  },
+  {
+    "role": "bot",
+    "message": "Demo reply: set GEMINI_API_KEY and GEMINI_URL in backend/.env to enable live chatbot.",
+    "session": "default",
+    "ts": 1757320073
+  },
+  {
+    "role": "user",
+    "message": "hiii",
+    "session": "default",
+    "ts": 1757386255
+  },
+  {
+    "role": "bot",
+    "message": "Demo reply: set GEMINI_API_KEY and GEMINI_URL in backend/.env to enable live chatbot.",
+    "session": "default",
+    "ts": 1757386255
+  },
+  {
+    "role": "user",
+    "message": "Hello chatbot!",
+    "session": "default",
+    "ts": 1757386459
+  },
+  {
+    "role": "bot",
+    "message": "Demo reply: set GEMINI_API_KEY and GEMINI_URL in backend/.env to enable live chatbot.",
+    "session": "default",
+    "ts": 1757386459
+  },
+  {
+    "role": "user",
+    "message": "hii",
+    "session": "default",
+    "ts": 1757386758
+  },
+  {
+    "role": "bot",
+    "message": "[Error calling configured GEMINI_URL]: 401 Client Error: Unauthorized for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+    "session": "default",
+    "ts": 1757386759
+  },
+  {
+    "role": "user",
+    "message": "hii",
+    "session": "default",
+    "ts": 1757387196
+  },
+  {
+    "role": "bot",
+    "message": "Hi there! How can I help you today?\n",
+    "session": "default",
+    "ts": 1757387198
+  },
+  {
+    "role": "user",
+    "message": "hii",
+    "session": "default",
+    "ts": 1757388028
+  },
+  {
+    "role": "bot",
+    "message": "Hi there! How can I help you today?\n",
+    "session": "default",
+    "ts": 1757388031
+  },
+  {
+    "role": "user",
+    "message": "what is 2+2",
+    "session": "default",
+    "ts": 1757388048
+  },
+  {
+    "role": "bot",
+    "message": "2 + 2 = 4\n",
+    "session": "default",
+    "ts": 1757388050
+  },
+  {
+    "role": "user",
+    "message": "hii",
+    "session": "1757388013767",
+    "ts": 1757388065
+  },
+  {
+    "role": "bot",
+    "message": "Hi there! How can I help you today?\n",
+    "session": "1757388013767",
+    "ts": 1757388067
+  },
+  {
+    "role": "user",
+    "message": "hello",
+    "session": "1757388077452",
+    "ts": 1757388088
+  },
+  {
+    "role": "bot",
+    "message": "Hello there! How can I help you today?\n",
+    "session": "1757388077452",
+    "ts": 1757388091
+  },
+  {
+    "role": "user",
+    "message": "hii",
+    "session": "default",
+    "ts": 1757388510
+  },
+  {
+    "role": "bot",
+    "message": "Hi there! How can I help you today?\n",
+    "session": "default",
+    "ts": 1757388512
+  },
+  {
+    "role": "user",
+    "message": "hello",
+    "session": "session_1757388769527",
+    "ts": 1757388780
+  },
+  {
+    "role": "bot",
+    "message": "Hello there! How can I help you today?\n",
+    "session": "session_1757388769527",
+    "ts": 1757388781
+  },
+  {
+    "role": "user",
+    "message": "who are you",
+    "session": "session_1757388769527",
+    "ts": 1757395516
+  },
+  {
+    "role": "bot",
+    "message": "[Error calling Google Gemini API]: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Max retries exceeded with url: /v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyC4Tu46FaQw8wCBQ_8CVqlCImS5RNr5Mts (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x000001DD15A8B110>: Failed to resolve 'generativelanguage.googleapis.com' ([Errno 11001] getaddrinfo failed)\"))",
+    "session": "session_1757388769527",
+    "ts": 1757395516
+  },
+  {
+    "role": "user",
+    "message": "who are you",
+    "session": "default",
+    "ts": 1757395624
+  },
+  {
+    "role": "bot",
+    "message": "I am a large language model, trained by Google.  I am an AI.\n",
+    "session": "default",
+    "ts": 1757395626
+  },
+  {
+    "role": "user",
+    "message": "hello",
+    "session": "session_1757397614329",
+    "ts": 1757397620
+  },
+  {
+    "role": "bot",
+    "message": "[Error calling Google Gemini API]: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyC4Tu46FaQw8wCBQ_8CVqlCImS5RNr5Mts",
+    "session": "session_1757397614329",
+    "ts": 1757397636
+  },
+  {
+    "role": "user",
+    "message": "hiii",
+    "session": "session_1757397764247",
+    "ts": 1757397770
+  },
+  {
+    "role": "bot",
+    "message": "Hi there! How can I help you today?\n",
+    "session": "session_1757397764247",
+    "ts": 1757397796
+  },
+  {
+    "role": "user",
+    "message": "hi",
+    "session": "default",
+    "ts": 1757397940
+  },
+  {
+    "role": "bot",
+    "message": "Hi there! How can I help you today?\n",
+    "session": "default",
+    "ts": 1757397955
+  },
+  {
+    "role": "user",
+    "message": "hii",
+    "session": "default",
+    "ts": 1757398052
+  },
+  {
+    "role": "bot",
+    "message": "[Error calling Google Gemini API]: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+    "session": "default",
+    "ts": 1757398082
+  },
+  {
+    "role": "user",
+    "message": "hello",
+    "session": "default",
+    "ts": 1757398449
+  },
+  {
+    "role": "bot",
+    "message": "Hello there! How can I help you today?\n",
+    "session": "default",
+    "ts": 1757398453
+  },
+  {
+    "role": "user",
+    "message": "what is react",
+    "session": "default",
+    "ts": 1757398468
+  },
+  {
+    "role": "bot",
+    "message": "[Error calling Google Gemini API]: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+    "session": "default",
+    "ts": 1757398499
+  },
+  {
+    "role": "user",
+    "message": "what is react",
+    "session": "default",
+    "ts": 1757398514
+  },
+  {
+    "role": "bot",
+    "message": "[Error calling Google Gemini API]: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=30)",
+    "session": "default",
+    "ts": 1757398545
+  }
+]

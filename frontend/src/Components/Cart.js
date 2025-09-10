@@ -1,116 +1,197 @@
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
+// // import React, { useEffect, useState } from "react";
+// // import axios from "axios";
 
-// const API_BASE = "http://127.0.0.1:8000";
+// // const API_BASE = "http://127.0.0.1:8000";
 
-// function Cart() {
-//   const [cart, setCart] = useState([]);
+// // function Cart() {
+// //   const [cart, setCart] = useState([]);
 
-//   useEffect(() => {
-//     fetchCart();
-//   }, []);
+// //   useEffect(() => {
+// //     fetchCart();
+// //   }, []);
 
-//   const fetchCart = async () => {
-//     try {
-//       const res = await axios.get(`${API_BASE}/cart`);
-//       setCart(res.data);
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
+// //   const fetchCart = async () => {
+// //     try {
+// //       const res = await axios.get(`${API_BASE}/cart`);
+// //       setCart(res.data);
+// //     } catch (err) {
+// //       console.error(err);
+// //     }
+// //   };
 
-//   const clearCart = async () => {
-//     try {
-//       await axios.delete(`${API_BASE}/cart`);
-//       setCart([]);
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
+// //   const clearCart = async () => {
+// //     try {
+// //       await axios.delete(`${API_BASE}/cart`);
+// //       setCart([]);
+// //     } catch (err) {
+// //       console.error(err);
+// //     }
+// //   };
+
+// //   return (
+// //     <section className="panel">
+// //       <h2>Cart</h2>
+// //       <div>
+// //         {cart.length === 0 && <div>Cart is empty</div>}
+// //         {cart.map((c, i) => (
+// //           <div key={i} className="cart-item">
+// //             {c.name} - ₹{c.price}
+// //           </div>
+// //         ))}
+// //       </div>
+// //       <button onClick={clearCart}>Clear cart</button>
+// //     </section>
+// //   );
+// // }
+
+// // export default Cart;
+// import React, { useContext } from "react";
+// import { CartContext } from "./CartContext";
+
+// const Cart = () => {
+//   const { cart, removeFromCart } = useContext(CartContext);
+
+//   const totalPrice = cart.length
+//     ? cart.reduce((total, item) => total + item.price, 0)
+//     : 0;
 
 //   return (
-//     <section className="panel">
-//       <h2>Cart</h2>
-//       <div>
-//         {cart.length === 0 && <div>Cart is empty</div>}
-//         {cart.map((c, i) => (
-//           <div key={i} className="cart-item">
-//             {c.name} - ₹{c.price}
-//           </div>
-//         ))}
-//       </div>
-//       <button onClick={clearCart}>Clear cart</button>
-//     </section>
+//     <div style={{ padding: "20px" }}>
+//       <h2 style={{ marginBottom: "20px" }}>Shopping Cart ({cart.length})</h2>
+
+//       {cart.length === 0 ? (
+//         <p>Your cart is empty.</p>
+//       ) : (
+//         <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+//           {cart.map((item) => (
+//             <div
+//               key={item.id}
+//               style={{
+//                 display: "flex",
+//                 alignItems: "center",
+//                 border: "1px solid #ccc",
+//                 borderRadius: "8px",
+//                 padding: "10px",
+//                 gap: "15px",
+//               }}
+//             >
+//               <img
+//                 src={item.image}
+//                 alt={item.title}
+//                 style={{ width: "80px", height: "80px", objectFit: "contain" }}
+//               />
+//               <div style={{ flex: 1 }}>
+//                 <h3 style={{ fontSize: "16px", margin: 0 }}>{item.title}</h3>
+//                 <p style={{ fontWeight: "bold", margin: "5px 0" }}>
+//                   ${item.price.toFixed(2)}
+//                 </p>
+//               </div>
+//               <button
+//                 onClick={() => removeFromCart(item.id)}
+//                 style={{
+//                   padding: "5px 10px",
+//                   backgroundColor: "#dc3545",
+//                   color: "#fff",
+//                   border: "none",
+//                   borderRadius: "4px",
+//                   cursor: "pointer",
+//                 }}
+//               >
+//                 Remove
+//               </button>
+//             </div>
+//           ))}
+
+//           <h3 style={{ textAlign: "right", marginTop: "20px" }}>
+//             Total: ${totalPrice.toFixed(2)}
+//           </h3>
+//         </div>
+//       )}
+//     </div>
 //   );
-// }
+// };
 
 // export default Cart;
+// src/Components/Cart.js
 import React, { useContext } from "react";
-import { CartContext } from "./CartContext";
+import { AppContext } from "../context/AppContext";
 
 const Cart = () => {
-  const { cart, removeFromCart } = useContext(CartContext);
+  const { cart, removeFromCart, clearCart } = useContext(AppContext);
 
-  const totalPrice = cart.length
-    ? cart.reduce((total, item) => total + item.price, 0)
-    : 0;
+  const total = cart.reduce((s, i) => s + (i.price || 0), 0);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2 style={{ marginBottom: "20px" }}>Shopping Cart ({cart.length})</h2>
-
+    <div style={{ padding: 16 }}>
+      <h2>Shopping Cart</h2>
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <div style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-          {cart.map((item) => (
-            <div
-              key={item.id}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                border: "1px solid #ccc",
-                borderRadius: "8px",
-                padding: "10px",
-                gap: "15px",
-              }}
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                style={{ width: "80px", height: "80px", objectFit: "contain" }}
-              />
-              <div style={{ flex: 1 }}>
-                <h3 style={{ fontSize: "16px", margin: 0 }}>{item.title}</h3>
-                <p style={{ fontWeight: "bold", margin: "5px 0" }}>
-                  ${item.price.toFixed(2)}
-                </p>
-              </div>
-              <button
-                onClick={() => removeFromCart(item.id)}
+        <>
+          <ul style={{ listStyle: "none", padding: 0 }}>
+            {cart.map((item) => (
+              <li
+                key={item.id}
                 style={{
-                  padding: "5px 10px",
-                  backgroundColor: "#dc3545",
-                  color: "#fff",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                  padding: 10,
+                  borderBottom: "1px solid #eee",
+                }}
+              >
+                <img src={item.image} alt={item.title} style={{ width: 70, height: 70, objectFit: "contain" }} />
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontWeight: 600 }}>{item.title}</div>
+                  <div>${item.price}</div>
+                </div>
+                <button
+                  onClick={() => removeFromCart(item.id)}
+                  style={{
+                    padding: "6px 10px",
+                    borderRadius: 6,
+                    border: "none",
+                    background: "#ef4444",
+                    color: "#fff",
+                    cursor: "pointer",
+                  }}
+                >
+                  Remove
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          <div style={{ marginTop: 12, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ fontSize: 18, fontWeight: 700 }}>Total: ${total.toFixed(2)}</div>
+            <div style={{ display: "flex", gap: 8 }}>
+              <button
+                onClick={() => clearCart()}
+                style={{ padding: "8px 12px", borderRadius: 6, border: "none", cursor: "pointer" }}
+              >
+                Clear
+              </button>
+              <button
+                style={{
+                  padding: "8px 12px",
+                  borderRadius: 6,
                   border: "none",
-                  borderRadius: "4px",
+                  background: "#10b981",
+                  color: "#fff",
                   cursor: "pointer",
                 }}
               >
-                Remove
+                Checkout
               </button>
             </div>
-          ))}
-
-          <h3 style={{ textAlign: "right", marginTop: "20px" }}>
-            Total: ${totalPrice.toFixed(2)}
-          </h3>
-        </div>
+          </div>
+        </>
       )}
     </div>
   );
 };
 
 export default Cart;
+
 
 
